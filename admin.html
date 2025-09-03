@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - ONYX</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .admin-wrap {
+        padding: 4rem 0;
+        background: #ffffff;
+      }
+      .admin-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+      }
+      .admin-card {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 12px;
+      }
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+      }
+      .admin-table th,
+      .admin-table td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #e9ecef;
+        text-align: left;
+      }
+      .admin-actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+      @media (max-width: 768px) {
+        .admin-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h1><img src="/file.png" width="90px" /></h1>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="admin-wrap">
+      <div class="container">
+        <h1 class="page-title" style="color: #2c3e50">Admin Dashboard</h1>
+        <div class="admin-grid">
+          <div class="admin-card">
+            <h3 style="color: #2c3e50; margin-bottom: 1rem">
+              Add / Edit Product
+            </h3>
+            <form id="admin-product-form">
+              <div class="form-group">
+                <label for="admin-name">Name *</label>
+                <input id="admin-name" required />
+              </div>
+              <div class="form-group">
+                <label for="admin-price">Price *</label>
+                <input type="number" step="0.01" id="admin-price" required />
+              </div>
+              <div class="form-group">
+                <label for="admin-image">Main Image URL *</label>
+                <input id="admin-image" required />
+              </div>
+              <div class="form-group">
+                <label for="admin-description">Description</label>
+                <textarea id="admin-description" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="admin-sizes">Sizes (comma separated)</label>
+                <input id="admin-sizes" placeholder="XS, S, M, L, XL" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Save Product
+              </button>
+            </form>
+          </div>
+          <div class="admin-card">
+            <h3 style="color: #2c3e50; margin-bottom: 1rem">Products</h3>
+            <div id="admin-products-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3><img src="/file.png" width="60px" /></h3>
+            <p>it's not just a t-shirt</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html" class="btn">Home</a></li>
+              <li><a href="products.html" class="btn">T-Shirts</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Information</h3>
+            <p>Email: webTeam@obaEw3a.com</p>
+            <p>Phone: 01010101010</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 ONYX. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="ui.js"></script>
+    <script src="auth.js"></script>
+    <script src="admin.js"></script>
+    <script src="cart.js"></script>
+    <script src="catalog.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
